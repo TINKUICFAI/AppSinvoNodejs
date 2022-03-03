@@ -53,11 +53,11 @@ UserRouter.put(
  * @route PUT "/api/User/verify"
  */
  UserRouter.put(
-    "/verify",
+    "/status",
     asyncHandler(async (req, res) => {
         const UserReqData = req.body;
 
-        const [rows] = await User.verifyUser(UserReqData);
+        const [rows] = await User.updateUserSatus(UserReqData);
 
         return res.json(createJsonResponse(200, "Successfull", rows));
     })

@@ -72,15 +72,14 @@ User.updateUserById = async (body) => {
     return result;
 };
 
-User.verifyUser = async (body) => {
+User.updateUserSatus = async (body) => {
     const { id } = body;
 
-    let varify = 1;
+    let status = 1;
 
-    const result = await connect.query(`update user set updatedAt=?, verify=? where id=?`, [
+    const result = await connect.query(`update user set updatedAt=?, status = (CASE status WHEN 1 THEN 0 ELSE 1 END) `, [
         currentDateTime(),
-        varify,
-        id,
+        status,
     ]);
 
     return result;
