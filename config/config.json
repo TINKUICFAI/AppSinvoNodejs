@@ -1,0 +1,42 @@
+{
+    "server": {
+        "host": "0.0.0.0",
+        "port": 8080
+    },
+    "jwt": {
+        "publicKey": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDRry8T/ef/FM51TBe0/Qs16pPAKlA6oncQRZbIdzmGOxH0H7PwDDOEe90k2JLkiO0CifofkV08m4nZ6EIH6slwdRtZKkRP6FfnRZcirtPpAWcpGDuKrKS5XGxIsrzD6vlnm6D2rvxrcnCDt6e8TSx5vFkbG9Emb6DmoFqcn+2MSQIDAQAB",
+        "issuer": "REPLACE_NAME Services",
+        "subject": "REPLACE_NAME Api",
+        "audience": "REPLACE_NAME",
+        "expiresIn": "30d"
+    },
+    "auth": {
+        "username": "test",
+        "password": " test@123"
+    },
+    "mongodb": {
+        "connectionString": "mongodb://test: test%401234%21%40%23%24@164.52.218.167:27017/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false",
+        "username": "test",
+        "password": " test@1234!@#$"
+    },
+    "mysql": {
+        "host": "localhost",
+        "username": "root",
+        "password": "12345"
+    },
+    "encrypt": {
+        "salt": "DYhG93b0qyJfIxfs2guVoUubWwvniR2G0Fgamuni",
+        "algorithm": "sha1",
+        "digest": "hex",
+        "publicKey": "",
+        "privateKey": ""
+    },
+    "mail_server": {
+        "host": "email-smtp.ap-south-1.amazonaws.com",
+        "port": "465",
+        "sender_mail": "",
+        "username": "AKIA5MC6CO6W2S6ZNNPU",
+        "password": "BNC3MjM+PZN8Vr9RoDTgv5+XsEYvQ6AU+2Is3FoCH8rX",
+        "from": "info@testntrack.com"
+    }
+}

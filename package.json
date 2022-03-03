@@ -1,0 +1,50 @@
+{
+    "name": "test-server",
+    "version": "1.0.0",
+    "description": "test-server",
+    "main": "server.js",
+    "engines": {
+        "node": "16.13.2",
+        "npm": "8.4.0"
+    },
+    "scripts": {
+        "dev": "nodemon server.js",
+        "start": "node server.js",
+        "eslint": "eslint .",
+        "pm2-dev": "pm2 start server.js --name testntrack_server -i max"
+    },
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "cors": "^2.8.5",
+        "ejs": "^3.1.5",
+        "express": "^4.17.1",
+        "express-async-handler": "^1.2.0",
+        "express-form-data": "^2.0.17",
+        "express-jwt": "^6.1.0",
+        "express-validator": "^6.14.0",
+        "fast-csv": "^4.3.6",
+        "helmet": "^4.4.1",
+        "jsonwebtoken": "^8.5.1",
+        "mathjax": "^3.1.2",
+        "mathjax-full": "^3.1.2",
+        "mathml-to-latex": "^1.0.1",
+        "mathml2latex": "^1.0.0",
+        "mongodb": "^3.6.3",
+        "mongoose": "^5.11.13",
+        "morgan": "^1.10.0",
+        "mysql2": "^2.3.3",
+        "nodemailer": "^6.7.2",
+        "unfetch": "^4.2.0"
+    },
+    "devDependencies": {
+        "eslint": "7.32.0",
+        "eslint-config-prettier": "8.3.0",
+        "eslint-config-standard": "16.0.3",
+        "eslint-plugin-import": "2.25.3",
+        "eslint-plugin-node": "11.1.0",
+        "eslint-plugin-prettier": "4.0.0",
+        "eslint-plugin-promise": "5.2.0",
+        "nodemon": "2.0.15",
+        "prettier": "2.5.0"
+    }
+}
