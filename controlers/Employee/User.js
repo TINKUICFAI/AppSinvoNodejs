@@ -129,8 +129,7 @@ UserRouter.post(
         // Get all Users
         const allUserRows = await User.getWeekDay();
         
-
-        // console.log("GetDAta::::::",allUserRows[0][0].ActualDayName)
+        // console.log("GetDAta::::::",allUserRows)
 
         return res.json(createJsonResponse(200, "Successfull", {...allUserRows[0]}));
     })
