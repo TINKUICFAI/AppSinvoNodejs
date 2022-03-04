@@ -31,12 +31,9 @@ User.insertUser = async (body) => {
         valueArray.push(restBody[key]);
     });
 
-    let status = 0;
-
-    const result = await connect.query(`insert into user set  ${queryString} createdAt=?, status=? `, [
+    const result = await connect.query(`insert into user set  ${queryString} createdAt=?`, [
         ...valueArray,
-        currentDateTime(),
-        status,
+        currentDateTime()
     ]);
 
     return result;
@@ -73,13 +70,9 @@ User.updateUserById = async (body) => {
 };
 
 User.updateUserSatus = async (body) => {
-    const { id } = body;
-
-    let status = 1;
 
     const result = await connect.query(`update user set updatedAt=?, status = (CASE status WHEN 1 THEN 0 ELSE 1 END) `, [
         currentDateTime(),
-        status,
     ]);
 
     return result;
@@ -108,6 +101,16 @@ User.updateUserPassword = async (body) => {
         currentDateTime(),
         id,
     ]);
+
+    return result;
+};
+
+
+User.getDistance = async (body,id) => {
+    const result = await connect.query(`call getUserDistance(${id},${body.latitude},${body.longitude}) `,[
+        id
+    ]);
+
 
     return result;
 };

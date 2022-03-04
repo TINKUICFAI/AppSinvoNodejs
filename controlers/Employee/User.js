@@ -106,4 +106,21 @@ UserRouter.delete(
     })
 );
 
+
+/**
+ * @route Post "/api/User/distance"
+ */
+ UserRouter.post(
+    "/distance/:id",
+    asyncHandler(async (req, res) => {
+        
+        // Get User Distance
+        const result = await User.getDistance(req.body,req.params.id);  
+        const distance=result[0][0][0].distance+" Km";
+        delete result[0][0][0].id
+
+        return res.json(createJsonResponse(200, "Successfull", {...result[0][0][0],distance}));
+    })
+);
+
 module.exports = UserRouter;

@@ -6,7 +6,13 @@ const userRouter = require("../controlers/Employee/User.js");
 
 const router = express.Router();
 
+const userAuth = require('../middleware/auth.middleware.js')
+
+
+
 router.use("/api/auth", authRouter);
+
+router.use(userAuth);
 
 // router.use("/api/admin", adminRouter);
 router.use("/api/user", userRouter);
