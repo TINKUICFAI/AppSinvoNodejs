@@ -49,6 +49,8 @@ authRouter.post(
             return res.status(400).json(createJsonResponse(400, "Invalid user"));
         }
 
+        delete employeerows[0].updatedAt;
+
         const token = jwt.generateJWT({ id: employeerows[0].id });
 
         delete employeerows[0].password;
