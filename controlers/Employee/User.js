@@ -123,4 +123,17 @@ UserRouter.delete(
     })
 );
 
+UserRouter.post(
+    "/weekDay",
+    asyncHandler(async (req, res) => {
+        // Get all Users
+        const allUserRows = await User.getWeekDay();
+        
+
+        // console.log("GetDAta::::::",allUserRows[0][0].ActualDayName)
+
+        return res.json(createJsonResponse(200, "Successfull", {...allUserRows[0]}));
+    })
+)
+
 module.exports = UserRouter;

@@ -110,9 +110,27 @@ User.getDistance = async (body,id) => {
     const result = await connect.query(`call getUserDistance(${id},${body.latitude},${body.longitude}) `,[
         id
     ]);
-
-
     return result;
 };
+
+User.getWeekDay = async () => {
+    const result = await connect.query(`select name , email,
+    case
+    when weekday(createdAt)='0' then 'Sunday'
+    when weekday(createdAt)='1' then 'Monday'
+    when weekday(createdAt)='2' then 'Tuesday'
+    when weekday(createdAt)='3' then 'Wednesday'
+    when weekday(createdAt)='4' then 'Thursday'
+    when weekday(createdAt)='5' then 'Friday'
+    when weekday(createdAt)='6' then 'Saturday'
+    end as ActualDayName
+    from user ;`);
+    return result;
+};
+
+// User.getWeekDay = async () => {
+//     const result = await connect.query(`select name , email from user   ;`);
+//     return result;
+// };
 
 module.exports = User;
