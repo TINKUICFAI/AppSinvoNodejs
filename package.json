@@ -29,8 +29,6 @@
         "mathjax-full": "^3.1.2",
         "mathml-to-latex": "^1.0.1",
         "mathml2latex": "^1.0.0",
-        "mongodb": "^3.6.3",
-        "mongoose": "^5.11.13",
         "morgan": "^1.10.0",
         "mysql2": "^2.3.3",
         "nodemailer": "^6.7.2",
