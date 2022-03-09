@@ -6,7 +6,7 @@ const userRouter = require("../controlers/Employee/User.js");
 
 const router = express.Router();
 
-const userAuth = require('../middleware/auth.middleware.js')
+const userAuth = require('../../middleware/auth.middleware.js')
 
 
 

@@ -2,10 +2,10 @@ const express = require("express");
 const asyncHandler = require("express-async-handler");
 const { body, validationResult } = require("express-validator");
 
-const utils = require("../../utils/utils.js");
-const jwt = require("../../utils/jwt.js");
-const User = require("../../models/user.js");
-const { createJsonResponse } = require("../../utils/serverResponse.js");
+const utils = require("../../../utils/utils.js");
+const jwt = require("../../../utils/jwt.js");
+const User = require("../../models/User.js");
+const { createJsonResponse } = require("../../../utils/serverResponse.js");
 
 const authRouter = express.Router();
 
@@ -62,7 +62,7 @@ authRouter.post(
  * @route POST "/api/User/insert"
  */
 authRouter.post(
-    "/insert",
+    "/register",
     [
         body("email")
             .exists()
@@ -103,6 +103,8 @@ authRouter.post(
         delete req.body.password;
 
         const token = jwt.generateJWT({ id: empl[0].insertId });
+
+        await User.updateUserById({...result[0][0],token});
 
         return res.json(createJsonResponse(200, "Successfull", {...result[0][0],token}));
     })

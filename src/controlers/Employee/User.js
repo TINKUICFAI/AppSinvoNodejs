@@ -3,8 +3,8 @@ const asyncHandler = require("express-async-handler");
 const { body, validationResult } = require("express-validator");
 
 const User = require("../../models/User.js");
-const utils = require("../../utils/utils.js");
-const { createJsonResponse } = require("../../utils/serverResponse.js");
+const utils = require("../../../utils/utils.js");
+const { createJsonResponse } = require("../../../utils/serverResponse.js");
 
 const UserRouter = express.Router();
 

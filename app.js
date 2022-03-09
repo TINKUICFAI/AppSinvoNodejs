@@ -5,7 +5,7 @@ const os = require("os");
 const cors = require("cors");
 // const morgan = require("morgan");
 
-const routes = require("./router/routes.js");
+const routes = require("./src/router/routes.js");
 
 const errorHandler = require("./utils/errorHandler.js");
 

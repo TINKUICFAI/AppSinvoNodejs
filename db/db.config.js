@@ -7,4 +7,14 @@ const connection = mysql.createConnection({
     database: "appsinvo",
 });
 
+connection.connect((err)=>{
+    if(err){
+        console.log(err);
+    }
+    else{
+    console.log(`Database is Connected`);
+
+    }
+})
+
 exports.connect = connection.promise();

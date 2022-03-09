@@ -1,5 +1,5 @@
-const { connect } = require("../db/db.config.js");
-const { currentDateTime } = require("../utils/date.js");
+const { connect } = require("../../db/db.config.js");
+const { currentDateTime } = require("../../utils/date.js");
 
 const User = {};
 
