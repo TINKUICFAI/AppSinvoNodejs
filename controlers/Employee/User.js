@@ -116,6 +116,7 @@ UserRouter.delete(
         
         // Get User Distance
         const result = await User.getDistance(req.body,req.params.id);  
+        console.log("result::", result[0][0][0])
         const distance=result[0][0][0].distance+" Km";
         delete result[0][0][0].id
 

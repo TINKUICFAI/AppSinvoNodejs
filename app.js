@@ -25,8 +25,6 @@ app.use(formData.parse(options));
 app.use(cors());
 app.use(helmet());
 app.use(express.json());
-// app.use(formData());
-// app.use(morgan("dev"));
 
 // Public static files
 app.use(express.static("public"));
